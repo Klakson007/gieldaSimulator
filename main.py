@@ -1,2 +1,3 @@
 print("hello")
-print("python nie najlepszy")
+print("python najlepszy")
+print("c++ ssie")
