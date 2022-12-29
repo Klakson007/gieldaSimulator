@@ -44,15 +44,13 @@ ax.set_ylabel('Exchange rate')
 def button_callback():
     print("Button click")
 
-frame_1 = customtkinter.CTkFrame(master=app)
-frame_1.pack(pady=20, padx=60, fill="x", expand=True,side='left')
+frame_1 = customtkinter.CTkFrame(master=app,fg_color='#e6d5be',bg_color='#e6d5be').place(x=11110,y=0)
+frame_1.pack(fill="x", expand=True,side='left')
 
-label_1 = customtkinter.CTkLabel(master=frame_1, justify=tk.LEFT,bg_color='#FAEBD7')
-label_1.pack(pady=100, padx=10)
-
-
-button_1 = customtkinter.CTkButton(master=frame_1, command=button_callback)
-button_1.pack(pady=10, padx=10)
+button_1 = customtkinter.CTkButton(master=frame_1, command=button_callback,fg_color='#fc0808',height=80,width=160)
+button_1.pack(pady=5, padx=5,side='left',expand=True)
+button_2 = customtkinter.CTkButton(master=frame_1, command=button_callback,fg_color='#384ef5',height=80,width=160)
+button_2.pack(pady=5, padx=5,side='right',expand=True)
 
 canvas = FigureCanvasTkAgg(fig, app)
 canvas.get_tk_widget().pack(side='right', fill='y',ipadx=400)
