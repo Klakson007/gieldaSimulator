@@ -40,6 +40,18 @@ fig, ax = plt.subplots()
 ax.plot(data['Date'], data['Close'])
 ax.set_xlabel('Date')
 ax.set_ylabel('Exchange rate')
+def button_callback():
+    print("Button click")
+
+frame_1 = customtkinter.CTkFrame(master=app)
+frame_1.pack(pady=20, padx=60, fill="x", expand=True)
+
+label_1 = customtkinter.CTkLabel(master=frame_1, justify=tk.LEFT)
+label_1.pack(pady=10, padx=10)
+
+
+button_1 = customtkinter.CTkButton(master=frame_1, command=button_callback)
+button_1.pack(pady=10, padx=10)
 
 canvas = FigureCanvasTkAgg(fig, app)
 canvas.get_tk_widget().pack(side='right', fill='y',ipadx=400)
