@@ -2,6 +2,7 @@ import yfinance as yf
 
 # Get the EUR/USD currency pair
 eur_usd = yf.Ticker("EURUSD=X")
+l=eur_usd
 
 # Get the historical data for the previous week
 historical_data = eur_usd.history(period="1wk")
