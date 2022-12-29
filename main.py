@@ -6,6 +6,14 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import time
 import customtkinter
+import yfinance as yf
+
+eur_usd = yf.Ticker("EURUSD=X")
+
+info = eur_usd.info
+
+buy_price = info['regularMarketPrice']
+sell_price = info['regularMarketPreviousClose']
 
 customtkinter.set_appearance_mode("dark") 
 customtkinter.set_default_color_theme("blue") 
@@ -44,12 +52,14 @@ ax.set_ylabel('Exchange rate')
 def button_callback():
     print("Button click")
 
-frame_1 = customtkinter.CTkFrame(master=app,fg_color='#e6d5be',bg_color='#e6d5be').place(x=11110,y=0)
+frame_1 = customtkinter.CTkFrame(master=app,fg_color='#e6d5be',bg_color='#e6d5be')
 frame_1.pack(fill="x", expand=True,side='left')
+frame_2 = customtkinter.CTkFrame(master=app,fg_color='#e6d5be',bg_color='#e6d5be')
+frame_2.pack(fill="x", expand=True,side='left')
 
-button_1 = customtkinter.CTkButton(master=frame_1, command=button_callback,fg_color='#fc0808',height=80,width=160)
+button_1 = customtkinter.CTkButton(master=frame_1, command=button_callback,fg_color='#fc0808',height=80,width=160,text="Buy:")
 button_1.pack(pady=5, padx=5,side='left',expand=True)
-button_2 = customtkinter.CTkButton(master=frame_1, command=button_callback,fg_color='#384ef5',height=80,width=160)
+button_2 = customtkinter.CTkButton(master=frame_1, command=button_callback,fg_color='#384ef5',height=80,width=160,text="Sell:")
 button_2.pack(pady=5, padx=5,side='right',expand=True)
 
 canvas = FigureCanvasTkAgg(fig, app)
