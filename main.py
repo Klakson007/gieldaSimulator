@@ -53,14 +53,14 @@ def button_callback():
     print("Button click")
 
 frame_1 = customtkinter.CTkFrame(master=app,fg_color='#e6d5be',bg_color='#e6d5be')
-frame_1.pack(fill="x", expand=True,side='left')
-frame_2 = customtkinter.CTkFrame(master=app,fg_color='#e6d5be',bg_color='#e6d5be')
-frame_2.pack(fill="x", expand=True,side='left')
+frame_1.pack(fill='both', expand=True,side='left')
 
 button_1 = customtkinter.CTkButton(master=frame_1, command=button_callback,fg_color='#fc0808',height=80,width=160,text="Buy:")
 button_1.pack(pady=5, padx=5,side='left',expand=True)
 button_2 = customtkinter.CTkButton(master=frame_1, command=button_callback,fg_color='#384ef5',height=80,width=160,text="Sell:")
 button_2.pack(pady=5, padx=5,side='right',expand=True)
+
+
 
 canvas = FigureCanvasTkAgg(fig, app)
 canvas.get_tk_widget().pack(side='right', fill='y',ipadx=400)
